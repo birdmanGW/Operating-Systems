@@ -1,0 +1,14 @@
+Part A:
+
+1. Because the distribution of "lottery" tickets per process need not be uniform, granting a process more tickets than others provides a means to focus CPU time towards higher-priority threads, granting those processes more tickets based on a universal priority value.  This will still avoid the problem of starvation, whereas each process is gaurenteed at least one lottery ticket, there is a non-zero probability of being selected at each scheduling operation.
+
+2. 
+a. The actual length of the current CPU burst time is 0, and the length of the next CPU burst is 100 milliseconds
+
+b. The next CPU burst length will be 10 milliseconds.  The scheduling algorithm becomes almost memoryless, and simply predicts the length of the previous burst for the next quantum of CPU execution.
+
+3. This scheduler would favor CPU-bound processes as they are rewarded with a much longer time quantum (incrementing by 10 ms) as well as a priority boost.  This scheduler would not penalize I/O-bound processes as they are likely to block for I/O before consuming their entire time quantum, but with an unchanged priority level.
+
+4.
+a. A First Come First Serve Scheduler
+b. A Last In First Out Scheduler
